@@ -30,5 +30,38 @@ calculatedistance(a:point):number{
     let devolver=Math.sqrt((Math.pow(a.getx()-this.y,2)+Math.pow(a.gety()-this.y,2)));
     return devolver;
 }
+calcularcuadrant():number{
+    let devolver:number=0;
+    if(this.x==0||this.y==0){
+        devolver=0;
+    }
+    if(this.x>0&&this.y>0){
+        devolver=1;
+    }
+    if(this.x<0&&this.y>0){
+        devolver=2;
+    }
+    if(this.x<0&&this.y<0){
+        devolver=3;
+    }
+    if(this.x>0&&this.y<0){
+        devolver=4;
+    }
+    return devolver;
+
+}
+calculatenearest(a:point[]):point{
+    let c=this.calculatedistance(a[0]);
+    let b=1;
+    let devolver:point=a[0];
+    for(b=1;b<a.length;b++){
+        if(this.calculatedistance(a[b])<c){
+            c=this.calculatedistance(a[b]);
+            devolver=a[b];
+
+        }
+    }
+    return devolver;
+}
 
 }
