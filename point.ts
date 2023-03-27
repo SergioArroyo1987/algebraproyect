@@ -22,5 +22,13 @@ let devolver=`${this.x},${this.y}`;
 return devolver;
 
 }
+distancetolorign():number{
+    let devolver=Math.sqrt(((Math.pow(this.x,2))+(Math.pow(this.y,2))));
+    return devolver;
+}
+calculatedistance(a:point):number{
+    let devolver=Math.sqrt((Math.pow(a.getx()-this.y,2)+Math.pow(a.gety()-this.y,2)));
+    return devolver;
+}
 
 }
